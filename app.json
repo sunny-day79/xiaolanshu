@@ -1,8 +1,12 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/article/detail",
+    "pages/profile/profile",
+    "pages/review/review",
+    "pages/order/order"
   ],
+  
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
@@ -10,5 +14,12 @@
     "navigationBarTextStyle":"black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+
+  "plugins": {
+    "sdkPlugin": {
+      "version": "3.17.0",
+      "provider": "wxc6b86e382a1e3294"
+    }
+  }
 }
