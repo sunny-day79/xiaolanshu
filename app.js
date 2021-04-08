@@ -1,19 +1,24 @@
 // app.js
 App({
-  onLaunch() {
-    // 展示本地存储能力
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+  onLaunch: function() {
+    wx.BaaS = requirePlugin('sdkPlugin')
+    //让插件帮助完成登录、支付等功能
+    wx.BaaS.wxExtend(wx.login, wx.getUserInfo, wx.requestPayment)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+    let clientID = '165a1925b454cbd63204'  // 应用名称: SENadvisor' first MiniApp
+    wx.BaaS.init(clientID)
+
+    const self = this
+    wx.BaaS.auth.getCurrentUser().then(
+      (res) => {
+        console.log("res from appjs", res)
+        wx.setStorageSync('userInfo', res)
+        self.globalData.userInfo = res
+      }, err => (console.log(err))
+    )
   },
+
   globalData: {
-    userInfo: null
+    userInfo: wx.getStorageSync('userInfo')
   }
 })
