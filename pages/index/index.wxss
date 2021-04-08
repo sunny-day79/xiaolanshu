@@ -6,6 +6,27 @@
   color: #aaa;
 }
 
+.search-bar {
+}
+
+.container {
+ 
+}
+
+.search {
+  width: 20px;
+  height: 20px;
+}
+
+.like-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.likes {
+  display: flex;
+}
+
 .userinfo-avatar {
   overflow: hidden;
   width: 128rpx;
@@ -14,6 +35,18 @@
   border-radius: 50%;
 }
 
-.usermotto {
-  margin-top: 200px;
+.article-image{
+  width: 100%;
+}
+
+.card{
+  margin-top: 0.6em;
+  /* width: 40%; */
+  border: solid 1px black;
+}
+
+.container {
+  padding: 0 10px;
+  column-count: 2;
+  column-gap: 1em;
 }

@@ -1,23 +1,27 @@
 <!--index.wxml-->
+
+
+ <view class="search-bar">
+  <search-bar clear show-cancel value="{{ value }}" controlled placeholder="Search" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
+ </view>
+
+<view class="nav-links"> Nav links go here </view>
+
+
 <view class="container">
-  <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
+  <view wx:for="{{posts}}" wx:for-item="article"> 
+    <view class="card" data-id="{{article.id}}" bindtap="navigateToPost">
+      <image mode="widthFix" class="article-image" src="{{article.image}}"></image>
+      <view class="title">Title</view>
+      <view class="footer">
+        <view class="author">Author</view>
+        <view>
+          <view class="likes">
+            <image class="like-icon" src="/images/heart.png"></image>
+            <view class="likes-text">80k</view>
+          </view>   
+        </view>
       </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
   </view>
 </view>
