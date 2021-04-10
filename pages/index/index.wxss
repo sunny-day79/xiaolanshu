@@ -5,6 +5,11 @@
   align-items: center;
   color: #aaa;
 }
+.title {
+  font-weight: bold;
+  font-size: 1em;
+  color:#19397c;
+}
 
 .search-bar {
 }
@@ -19,9 +24,8 @@
 }
 
 .like-icon {
-  width: 15px;
-  height: 15px;
-  display: flex;
+  width: 20px;
+  height: 20px;
 }
 
 .likes {
@@ -58,7 +62,8 @@
   column-gap: 1em;
 }
 .nav-links {
-  
+  display: flex;
+  justify-content: space-between;
 }
 .author-avatar {
   width: 35rpx;
@@ -69,4 +74,5 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 0.6em;
 }
