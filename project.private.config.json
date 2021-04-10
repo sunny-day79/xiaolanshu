@@ -1,0 +1,24 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/article/detail",
+          "pathName": "pages/article/detail",
+          "query": "id=606c66f6e63687094090d7f9",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
