@@ -5,7 +5,12 @@
   <search-bar clear show-cancel value="{{ value }}" controlled placeholder="Search" bind:change="onChange" bind:focus="onFocus" bind:blur="onBlur" bind:confirm="onConfirm" bind:clear="onClear" bind:cancel="onCancel" />
  </view>
 
-<view class="nav-links"> Nav links go here </view>
+<view class="nav-links"> 
+  <view>Fashion</view>  
+  <view>Lifestyle</view>
+  <view>Sports</view>
+  <view> Nutrition</view>
+</view>
 
 
 <view class="container">
@@ -21,7 +26,7 @@
         </view>  
         <view>
           <view class="likes">
-            <image class="like-icon" src="/Images/heart.png"></image>
+            <image class="like-icon" src="/Images/heart.png"></image>
             <view class="likes-text">80k</view>
           </view>   
         </view>
