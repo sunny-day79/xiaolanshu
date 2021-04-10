@@ -1,19 +1,38 @@
 // pages/profile/profile.js
+const app = getApp()
 Page({
-
   /**
    * Page initial data
    */
   data: {
-
+    currentUser: null,
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    this.setData({
+      currentUser: app.globalData.userInfo
+    })
+},
 
+
+  userInfoHandler: function(userInfo) {
+    let self = this 
+    wx.baas.auth.loginWithWechat(userInfo).then(
+      (res) => {
+        console.log('userInfo', res);
+        self.setData({currentUser: res});
+        wx.setStorageSync('userInfo', res)
+      },
+      err => {
+        console.log('error!', err)
+      }
+      )
   },
+
+  
 
   /**
    * Lifecycle function--Called when page is initially rendered
@@ -62,5 +81,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
 })

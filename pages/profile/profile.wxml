@@ -1,20 +1,16 @@
 <!--pages/profile/profile.wxml-->
 <view class="profile">
-  <image class="avatar" src="photo"/>
+  <image class="avatar" src="{{currentUser.avatar}}"/>
   <view>
-    <view class="userName"> currentUser._username</view>
-    <view class="accountNumber"> account number</view>
-    <view class="location"> My location</view>
+    <view class="userName"> Username: {{currentUser.nickname}}</view>
+    <view class="accountNumber">Account number: {{currentUser.id}}</view>
+    <view class="country"> Country: {{currentUser.country}}</view>
   </view>
 </view>
 
-<view class="footer"> 
-  <view>follow</view>
-  <view>Fans</view>
-  <view>Like/Fav</view>
-</view>
+
 
 <view>
-  <button bindtap="showReviews">Reviews</button>
-  <button bindtap="showFavorites">Favorites</button>
+  <button bindtap="showReviews">See my reviews</button>
+  <button bindtap="showFavorites"> See my favorites</button>
 </view>
