@@ -13,6 +13,12 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/profile/profile",
+          "pathName": "pages/profile/profile",
+          "query": "",
+          "scene": null
+        },
+        {
            "name": "pages/article/detail",
           "pathName": "pages/article/detail",
           "query": "id=606c66f6e63687094090d7f9"
@@ -20,6 +26,13 @@
         {
           "name": "pages/index/index",
           "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/review/review",
+          "pathName": "pages/review/review",
+          "query": "",
           "scene": null
         }
       ]
