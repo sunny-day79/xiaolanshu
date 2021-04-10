@@ -1,45 +1,40 @@
-// pages/profile/profile.js
+// pages/myreviews/myreviews.js
 const app = getApp()
 Page({
   /**
    * Page initial data
    */
   data: {
-    currentUser: null,
+  currentUser: null,
+  myreviews:[],
+
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    let self = this;
     this.setData({
       currentUser: app.globalData.userInfo
-    })
-},
+    });
 
-
-  userInfoHandler: function(userInfo) {
-    let self = this 
-    wx.baas.auth.loginWithWechat(userInfo).then(
+    let Myreviews = new wx.BaaS.TableObject('reviews')
+    let query = new wx.BaaS.Query();
+    query.compare("created_by", "=", this.data.currentUser.id)
+    Myreviews.expand(['article_id']).setQuery(query).find().then(
       (res) => {
-        console.log('userInfo', res);
-        self.setData({currentUser: res});
-        wx.setStorageSync('userInfo', res)
+        console.log("getting your reviews", res)
+        self.setData({
+          myreviews: res.data.objects
+        })
       },
-      err => {
-        console.log('error!', err)
+      (err) => {
+        console.log('err', err)
       }
-      )
+    )
+
   },
-
-  showMyReviews: function(e) {
-    console.log('calling a post', e)
-    wx.navigateTo({
-      url: `/pages/myreviews/myreviews`
-    })
-  },
-
-
   
 
   /**
@@ -91,4 +86,17 @@ Page({
 
   },
 
+  userInfoHandler: function(userInfo) {
+    let self = this 
+    wx.baas.auth.loginWithWechat(userInfo).then(
+      (res) => {
+        console.log('userInfo', res);
+        self.setData({currentUser: res});
+        wx.setStorageSync('userInfo', res)
+      },
+      err => {
+        console.log('error!', err)
+      }
+      )
+  },
 })

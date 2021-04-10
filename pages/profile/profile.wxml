@@ -11,6 +11,5 @@
 
 
 <view>
-  <button bindtap="showReviews">See my reviews</button>
-  <button bindtap="showFavorites"> See my favorites</button>
+  <button bindtap="showMyReviews">See my reviews</button>
 </view>

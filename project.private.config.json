@@ -40,6 +40,12 @@
           "pathName": "pages/post/post",
           "query": "id=606c66f6e63687094090d7f9",
           "scene": null
+        },
+        {
+          "name": "pages/myreviews/myreviews",
+          "pathName": "pages/myreviews/myreviews",
+          "query": "",
+          "scene": null
         }
       ]
     }

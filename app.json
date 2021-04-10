@@ -5,7 +5,8 @@
     "pages/profile/profile",
     "pages/review/review",
     "pages/post/post",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/myreviews/myreviews"
   ],
   "tabBar": {
     "color": "#ffffff",
