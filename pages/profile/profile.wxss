@@ -1,6 +1,15 @@
 /* pages/profile/profile.wxss */
 .avatar{
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
+}
+.profile {
+  display: flex;
+}
+.username {
+  font-weight: bold;
+}
+.country {
+  font-style: italic;
 }
