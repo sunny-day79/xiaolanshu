@@ -75,4 +75,9 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 0.6em;
+  padding: 10rpx;
+}
+.text {
+  font-size: small;
+  padding-left: 8rpx;
 }

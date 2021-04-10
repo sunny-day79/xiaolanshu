@@ -2,9 +2,8 @@
 <view class="profile">
   <image class="avatar" src="{{currentUser.avatar}}"/>
   <view>
-    <view class="userName"> Username: {{currentUser.nickname}}</view>
-    <view class="accountNumber">Account number: {{currentUser.id}}</view>
-    <view class="country"> Country: {{currentUser.country}}</view>
+    <view class="userName"> {{currentUser.nickname}}</view>
+    <view class="country"> {{currentUser.country}}</view>
   </view>
 </view>
 
