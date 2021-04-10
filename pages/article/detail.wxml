@@ -1,2 +1,44 @@
 <!--pages/article/detail.wxml-->
-<text>pages/article/detail.wxml</text>
+<view class="article-banner" style="background-image: url('{{article.image}}'); background-size: cover; height: 70vh; width: 100%;"></view>
+
+<block wx:if="{{currentUser}}" >
+  <view class="article-card">
+    <view class="article-author"> 
+      <view class="author">
+        <image class="author-avatar" src="{{article.user_id.avatar}}"></image>
+        <view class="author-name">{{article.user_id.nickname}}</view>
+      </view>
+      <view class="button">follow</view>
+    </view>
+    <view class="title">{{article.title}}</view>
+    <view class="article-content">{{article.description}}</view>
+  </view>
+
+  <view class="reviews">
+    <view wx:for="{{reviews}}" wx:key="key" wx:for-item="review" class="review-box">{{review.user_id.nickname}} : {{review.content}}</view>
+  </view>
+
+  <view class="add-review">
+    <view class="title">Add a review</view>
+      <form bindsubmit="createReview"> 
+        <view class="form-group">
+          <view class="form">
+            <view class="label">Review title</view>
+            <input type="text"/>
+          </view>
+          <view class="form">
+            <view class="label">Review content</view>
+            <textarea type="text" name="content"/>
+          </view>
+        </view>
+        <button class="button" form-type="submit">Publish Review</button>
+      </form>
+    </view>
+    
+
+
+</block>
+
+<block wx:else>
+  <button class="grey-button" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login to see all</button>
+</block>
