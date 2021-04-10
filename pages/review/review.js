@@ -1,10 +1,14 @@
 // pages/review/review.js
+const app = getApp()
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
+    currentUser:null,
+    reviews: [],
 
   },
 
@@ -12,7 +16,22 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    this.setData({
+      currentUser:app.globalData.userInfo,
+    })
 
+    console.log('options',options)
+    const self = this
+    let Reviews = new wx.BaaS.TableObject("reviews") 
+    let reviewQuery = new wx.BaaS.Query()
+    reviewQuery.compare('article_id', "=", options.id)
+    Reviews.expand('created_by').setQuery(reviewQuery).find().then(
+      (res) => {
+        self.setData({
+          reviews:res.data.objects
+        })
+      }
+    )
   },
 
   /**
