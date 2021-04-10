@@ -35,7 +35,7 @@ Page({
 
     let reviewQuery = new wx.BaaS.Query()
     reviewQuery.compare('article_id', "=", options.id)
-    Reviews.expand('user_id').setQuery(reviewQuery).find().then(
+    Reviews.expand('created_by').setQuery(reviewQuery).find().then(
       (res) => {
         console.log("Reviews",res)
         self.setData({

@@ -5,6 +5,8 @@
   border-radius: 50rpx;
   padding: 10rpx;
   margin-right: 20rpx;
+  font-size: medium;
+  font-weight: normal;
 }
 .article-card {
   margin-top: 20rpx;
