@@ -9,31 +9,18 @@ Page({
   data: {
     article: null,
     reviews: [],
+    RecommendedPosts:[],
+    currentUser:null,
 
   },
 
   /**
    * Lifecycle function--Called when page load
    */
-  onLoad: function (options) {
-    this.setData({
-      currentUser:app.globalData.userInfo
-    }), 
-
-    console.log('options',options)
-    const self = this
-    let Article = new wx.BaaS.TableObject("article")
-    let Reviews = new wx.BaaS.TableObject("reviews")  
-    Article.expand('user_id').get(options.id).then(
-      (res) => {
-        console.log("GetArticle", res)
-        self.setData({
-          article: res.data
-        })
-      }
-    )
-
+  showReview(options){
+    let self = this;
     let reviewQuery = new wx.BaaS.Query()
+    let Reviews = new wx.BaaS.TableObject("reviews") 
     reviewQuery.compare('article_id', "=", options.id)
     Reviews.expand('created_by').setQuery(reviewQuery).find().then(
       (res) => {
@@ -43,6 +30,38 @@ Page({
         })
       }
     )
+  },
+
+  onLoad: function (options) {
+    this.setData({
+      currentUser:app.globalData.userInfo,
+      options: options
+    }), 
+    
+    console.log('options',options)
+    const self = this
+    let Article = new wx.BaaS.TableObject("article")
+    let RecommendedPost = new wx.BaaS.TableObject("article")
+    Article.expand('user_id').get(options.id).then(
+      (res) => {
+        console.log("GetArticle", res)
+        self.setData({
+          article: res.data
+        })
+      }
+    )
+
+    this.showReview(options);
+
+    RecommendedPost.expand('user_id').find().then(
+      (res) => {
+        console.log("GetPost", res)
+        self.setData({
+          RecommendedPosts: res.data.objects
+        })
+      }
+    )
+
   },
 
   userInfoHandler: function(data) {
@@ -84,6 +103,21 @@ Page({
         console.log("error", err)
       }
     )
+    this.showReview(this.data.options)
+  },
+
+  navigateToPost: function(e) {
+    console.log('calling a post', e)
+    wx.navigateTo({
+      url: `/pages/article/detail?id=${e.currentTarget.dataset.id}`,
+    })
+  },
+
+  navigateToReviews: function(e) {
+    console.log('calling a post', e)
+    wx.navigateTo({
+      url: `/pages/review/review?id=${e.currentTarget.dataset.id}`,
+    })
   },
 
   /**
@@ -97,7 +131,6 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
   },
 
   /**

@@ -4,6 +4,7 @@
     "pages/article/detail",
     "pages/profile/profile",
     "pages/review/review",
+    "pages/post/post",
     "pages/order/order"
   ],
   "tabBar": {
@@ -18,10 +19,9 @@
       "selectedIconPath": "Images/Home_White.png"
     },
     {
-      "pagePath": "pages/order/order",
-      "text": "Order",
-      "iconPath": "Images/Order_White.png",
-      "selectedIconPath": "Images/Order_White.png"
+      "pagePath": "pages/post/post",
+      "iconPath": "Images/post.png",
+      "selectedIconPath": "Images/post.png"
     },
     {
       "pagePath": "pages/profile/profile",

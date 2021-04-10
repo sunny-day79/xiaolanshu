@@ -9,7 +9,7 @@
 
 
 <view class="container">
-  <view wx:for="{{posts}}" wx:for-item="article"> 
+  <view wx:for="{{posts}}" wx:key="key" wx:for-item="article"> 
     <view class="card" data-id="{{article.id}}" bindtap="navigateToPost">
       <image mode="widthFix" class="article-image" src="{{article.image}}"></image>
       <view class="title">Title</view>
