@@ -15,7 +15,7 @@
   </view>
 
   <view class="reviews">
-    <view wx:for="{{reviews}}" wx:key="key" wx:for-item="review" class="review-box">{{review.user_id.nickname}} : {{review.content}}</view>
+    <view wx:for="{{reviews}}" wx:key="key" wx:for-item="review" class="review-box">{{review.created_by.nickname}} : {{review.content}}</view>
   </view>
 
   <view class="add-review">
@@ -33,10 +33,23 @@
         </view>
         <button class="button" form-type="submit">Publish Review</button>
       </form>
-    </view>
-    
+  </view>
 
-
+  <view class="container">
+    <view>Recommended</view>
+    <view wx:for="{{articles}}" wx:key="key" wx:for-item="article"> 
+      <view class="card" data-id="{{article.id}}" bindtap="navigateToPost">
+        <image mode="widthFix" class="article-image" src="{{article.image}}"></image>
+        <view class="title">Title</view>
+        <view class="footer"></view>
+        <view class="author">Author</view>
+      </view>
+          <view class="likes">
+            <image class="like-icon" src="/Images/heart.png"></image>
+            <view class="likes-text">80k</view>
+          </view>   
+  </view>
+  </view>
 </block>
 
 <block wx:else>

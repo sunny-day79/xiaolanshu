@@ -52,7 +52,7 @@ Page({
   navigateToPost: function(e) {
     console.log('calling a post', e)
     wx.navigateTo({
-      url: '/pages/article/detail?id=${e.currentTarget.dataset.id}',
+      url: `/pages/article/detail?id=${e.currentTarget.dataset.id}`,
     })
   }
 })
