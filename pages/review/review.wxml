@@ -1,20 +1,15 @@
 <!--pages/review/review.wxml-->
-<view class="title"> Name of the post</view>
-<view wx:for="reviews" wx:key="key" wx:for-item="review">
-  <image class="user-avatar"></image>
-  <view class= "input-and-likes">
-    <view class="input">
-      <view class="username">current user</view>
-      <view class="date"> Date</view>
-      <view class="comment">User's comment</view>
+<view wx:for="{{reviews}}" wx:key="key" wx:for-item="review" class="card">
+    <view class="inner-card">
+      <image class="avatar" src="{{review.created_by.avatar}}"></image>
+      <view class="content">
+        <view>{{review.created_by.nickname}}</view>
+        <view>{{review.content}}</view>
+      </view>
     </view>
-
-    <view class="like icon">Like icon</view>
-    <view class="number-of-likes">The number of likes</view>
-
-  </view>
-  
-
-
-
+    <view class="like">
+      <image class="small-icon" src="/Images/like.png"></image>
+      <text class="content">200</text>
+    </view>
 </view>
+

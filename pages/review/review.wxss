@@ -1,1 +1,27 @@
 /* pages/review/review.wxss */
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.card {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1f1f0;
+  margin-top: 20rpx;
+}
+.inner-card {
+  display: flex;
+}
+.like {
+  display: flex;
+  align-items: center;
+}
+.small-icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+.content {
+  font-size: small;
+  font-style: italic;
+}

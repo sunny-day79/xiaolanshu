@@ -16,7 +16,7 @@
 
   <view class="reviews">
     <view wx:for="{{reviews}}" wx:if="{{index < 3}}" wx:key="key" wx:for-item="review" class="review-box">{{review.created_by.nickname}} : {{review.content}}</view>
-    <text bindtap="navigateToReviews">see more >>> </text> 
+    <text data-id="{{article.id}}" bindtap="navigateToReviews">see more >>> </text> 
   </view>
 
   <view class="add-review">
@@ -57,7 +57,7 @@
   </view>
   <view class="footer">
     <view class="social">
-      <image class="small-icon" src="/Images/review_white.png" bindtap="navigateToReviews"></image>
+      <image class="small-icon" src="/Images/review_white.png" data-id="{{article.id}}" bindtap="navigateToReviews"></image>
       <text class="white-text">10</text>
     </view>
     <view class="social">
