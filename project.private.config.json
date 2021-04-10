@@ -1,5 +1,5 @@
 {
-  "setting": {},
+
   "condition": {
     "plugin": {
       "list": []
@@ -13,6 +13,7 @@
     "miniprogram": {
       "list": [
         {
+
           "name": "pages/profile/profile",
           "pathName": "pages/profile/profile",
           "query": "",
@@ -28,6 +29,7 @@
           "name": "pages/review/review",
           "pathName": "pages/review/review",
           "query": "",
+
           "scene": null
         }
       ]
