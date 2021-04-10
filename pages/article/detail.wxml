@@ -38,7 +38,7 @@
 
   <view class ="title">Recommended</view>
   <view class="container">
-    <view wx:for="{{RecommendedPosts}}" wx:key="key" wx:for-item="RecommendedPost"> 
+    <view wx:for="{{RecommendedPosts}}" wx:if="{{index < 4}}" wx:key="key" wx:for-item="RecommendedPost"> 
       <view class="card" data-id="{{RecommendedPost.id}}" bindtap="navigateToPost">
         <image class="post-image" src="{{RecommendedPost.image}}"></image>
         <view class="article-title">{{RecommendedPost.title}}</view>
