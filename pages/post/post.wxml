@@ -1,0 +1,26 @@
+<!--pages/post/post.wxml-->
+<view class="container">You can add a new article here</view>
+<block wx:if="{{currentUser}}">
+    <form action="submit" bindsubmit="addArticle">
+        <view class="form-group">
+          <view class="label">Title of the article</view>
+          <input type="text" title="title"/> 
+        </view>
+        <view class="form-group">
+          <view class="label">Describe this article</view>
+          <textarea type="text" name="description"/>
+        </view>
+        <view class="form-group">
+          <view class="image-upload" bindtap="uploadImage">
+            <view>Upload a picture</view>
+            <view wx:if="{{photo === null}}" class="big-icon">📷</view>
+            <image wx:else src="{{photo}}"></image>
+          </view>
+        </view>
+        <button class="submit-button" form-type="submit">Submit</button>
+    </form>
+  </block>
+
+<block wx:else>
+  <button class="green-button" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login</button>
+</block>

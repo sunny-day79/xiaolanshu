@@ -19,7 +19,7 @@
           "scene": null
         },
         {
-           "name": "pages/article/detail",
+          "name": "pages/article/detail",
           "pathName": "pages/article/detail",
           "query": "id=606c66f6e63687094090d7f9"
         },
@@ -33,6 +33,12 @@
           "name": "pages/review/review",
           "pathName": "pages/review/review",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/post/post",
+          "pathName": "pages/post/post",
+          "query": "id=606c66f6e63687094090d7f9",
           "scene": null
         }
       ]

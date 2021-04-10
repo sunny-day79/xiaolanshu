@@ -68,3 +68,60 @@ input {
   margin-top: 20rpx;
   margin-bottom: 20rpx;
 }
+.container {
+  padding: 0 10px;
+  column-count: 2;
+  column-gap: 1em;
+}
+.card {
+  margin-top: 0.6em;
+  border: solid 1px black;
+  display: inline-block;
+  width: 100%;
+}
+.post-image{
+  width: 100%;
+}
+.likes {
+  display: flex;
+}
+.like-icon {
+  width: 20px;
+  height: 20px;
+}
+.small-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.post-author {
+  display: flex;
+}
+.detail {
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx;
+}
+.text {
+  font-size: small;
+  padding-left: 8rpx;
+}
+
+.footer {
+  background-color: #04395E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+}
+.small-icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+.white-text {
+  color: white;
+  padding-left: 10rpx;
+}
+.social {
+  margin: 20rpx;
+}
