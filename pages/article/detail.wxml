@@ -5,8 +5,8 @@
   <view class="article-card">
     <view class="article-author"> 
       <view class="author">
-        <image class="author-avatar" src="{{article.user_id.avatar}}"></image>
-        <view class="author-name">{{article.user_id.nickname}}</view>
+        <image class="author-avatar" src="{{article.created_by.avatar}}"></image>
+        <view class="author-name">{{article.created_by.nickname}}</view>
       </view>
       <view class="button">follow</view>
     </view>
@@ -15,7 +15,7 @@
   </view>
 
   <view class="reviews">
-    <view wx:for="{{reviews}}" wx:key="key" wx:for-item="review" class="review-box">{{review.created_by.nickname}} : {{review.content}}</view>
+    <view wx:for="{{reviews}}" wx:if="{{index < 3}}" wx:key="key" wx:for-item="review" class="review-box">{{review.created_by.nickname}} : {{review.content}}</view>
     <text bindtap="navigateToReviews">see more >>> </text> 
   </view>
 
@@ -44,8 +44,8 @@
         <view class="article-title">{{RecommendedPost.title}}</view>
         <view class="detail">
           <view class="post-author">
-            <image class="small-avatar" src="{{RecommendedPost.user_id.avatar}}"></image>
-            <view class="text">{{RecommendedPost.user_id.nickname}}</view>
+            <image class="small-avatar" src="{{RecommendedPost.created_by.avatar}}"></image>
+            <view class="text">{{RecommendedPost.created_by.nickname}}</view>
           </view>
           <view class="likes">
             <image class="like-icon" src="/Images/heart.png"></image>

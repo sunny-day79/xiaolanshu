@@ -1,1 +1,38 @@
-/* pages/post/post.wxss */
+.title {
+  font-size: large;
+  font-weight: bold;
+  color: #04395E;
+}
+
+.container {
+  font-size: medium;
+  font-weight: bold;
+  padding: 0rpx;
+}
+input {
+  background-color: rgb(230, 230, 230);
+  width: 100%;
+}
+textarea {
+  background-color: rgb(230, 230, 230);
+  width: 100%;
+}
+.big-icon {
+  font-size: xx-large;
+  text-align: center;
+}
+.submit-button {
+  margin: 50rpx;
+  box-shadow: 5rpx 5rpx 5rpx black;
+}
+.form-group {
+  margin:20rpx;
+  padding: 20rpx;
+}
+.long-button {
+  font-size: small;
+  margin: 10rpx;
+  box-sizing: initial;
+  box-shadow: 1rpx 1rpx 1rpx black;
+  background-color: white;
+  }

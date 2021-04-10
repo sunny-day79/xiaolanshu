@@ -1,5 +1,7 @@
 <!--pages/post/post.wxml-->
-<view class="container">You can add a new article here</view>
+
+<view class="title">You can add a new article here</view>
+<view class="container">
 <block wx:if="{{currentUser}}">
     <form action="submit" bindsubmit="addArticle">
         <view class="form-group">
@@ -24,3 +26,4 @@
 <block wx:else>
   <button class="green-button" open-type="getUserInfo" bindgetuserinfo="userInfoHandler">Login</button>
 </block>
+</view>
