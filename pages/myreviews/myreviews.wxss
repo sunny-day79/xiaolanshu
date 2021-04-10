@@ -1,0 +1,39 @@
+/* pages/myreviews/myreviews.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.article-image{
+  width: 100% ;
+}
+
+.card{
+  margin-top: 1.2em;
+  border: solid 0.2px rgb(0,154,217);  
+  display: inline-block;
+  width: 100%;
+}
+
+.container {
+  padding: 0 10px;
+  column-count: 2;
+  column-gap: 1em;
+}
+
+.fullBar {
+  /* position: absolute; */
+  margin: 0px 0px;
+  z-index: 3;
+  width: 0px;
+  height: 10px;
+  background: rgb(0,154,217);
+  background: linear-gradient(90deg, rgba(4,57,94,1) 0%, rgba(4,57,94,0.75) 65%, rgba(4,57,94,0.5) 100%);
+  transition: 0.6s ease-out;
+}
+.card:hover .fullBar {
+  width: 100%;
+  transition: 0.4s ease-out;
+}

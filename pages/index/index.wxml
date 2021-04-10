@@ -21,7 +21,7 @@
         </view>  
         <view>
           <view class="likes">
-            <image class="like-icon" src="/Images/heart.png"></image>
+            <image class="like-icon" src="/Images/heart.png"></image>
             <view class="likes-text">80k</view>
           </view>   
         </view>

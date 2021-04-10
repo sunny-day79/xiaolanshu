@@ -1,0 +1,16 @@
+<!--pages/myreviews/myreviews.wxml-->
+<view class="container">
+  <view wx:for = "{{myreviews}}" wx:key="key" wx:for-item = "myreview">
+    <view class="card">
+      <view class="title">{{myreview.article_id.title}}</view>
+      <image mode="widthFix" class="article-image" src="{{myreview.article_id.image}}"/>
+      <view class="content">{{myreview.content}}</view>
+      <view class="fullBar"></view> 
+    </view>
+    
+  </view>
+</view>
+
+
+
+    
