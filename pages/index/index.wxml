@@ -16,8 +16,8 @@
 
       <view class="footer">
         <view class="post-author">
-          <image class="author-avatar" src="{{article.user_id.avatar}}"></image>
-          <view class="author">{{article.user_id.nickname}}</view>
+          <image class="author-avatar" src="{{article.created_by.avatar}}"></image>
+          <view class="author">{{article.created_by.nickname}}</view>
         </view>  
         <view>
           <view class="likes">

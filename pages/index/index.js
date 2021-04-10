@@ -22,7 +22,7 @@ Page({
     const self = this
     let Posts = new wx.BaaS.TableObject('article')
 
-    Posts.expand('user_id').find().then(
+    Posts.expand('created_by').find().then(
       (res) => {
         console.log('post successfully loaded',res)
         self.setData({

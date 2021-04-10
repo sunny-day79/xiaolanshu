@@ -42,7 +42,7 @@ Page({
     const self = this
     let Article = new wx.BaaS.TableObject("article")
     let RecommendedPost = new wx.BaaS.TableObject("article")
-    Article.expand('user_id').get(options.id).then(
+    Article.expand('created_by').get(options.id).then(
       (res) => {
         console.log("GetArticle", res)
         self.setData({
@@ -53,7 +53,7 @@ Page({
 
     this.showReview(options);
 
-    RecommendedPost.expand('user_id').find().then(
+    RecommendedPost.expand('created_by').find().then(
       (res) => {
         console.log("GetPost", res)
         self.setData({
