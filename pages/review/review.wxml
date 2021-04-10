@@ -1,2 +1,20 @@
 <!--pages/review/review.wxml-->
-<text>pages/review/review.wxml</text>
+<view class="title"> Name of the post</view>
+<view wx:for="reviews" wx:key="key" wx:for-item="review">
+  <image class="user-avatar"></image>
+  <view class= "input-and-likes">
+    <view class="input">
+      <view class="username">current user</view>
+      <view class="date"> Date</view>
+      <view class="comment">User's comment</view>
+    </view>
+
+    <view class="like icon">Like icon</view>
+    <view class="number-of-likes">The number of likes</view>
+
+  </view>
+  
+
+
+
+</view>

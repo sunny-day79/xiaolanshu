@@ -1,1 +1,68 @@
 /* pages/article/detail.wxss */
+.button {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50rpx;
+  padding: 10rpx;
+  margin-right: 20rpx;
+}
+.article-card {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.article-author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.author-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.author-name {
+  margin-left: 20rpx;
+}
+.title {
+  font-weight: bold;
+  margin-left: 10rpx;
+}
+.article-content {
+  font-style: italic;
+  font-size: small;
+  margin-left: 10rpx;
+}
+.reviews {
+  background-color: lightgray;
+  margin: 10rpx;
+  border-radius: 10rpx;
+  font-size: small;
+  font-style: italic;
+}
+.form {
+  display: flex;
+  margin: 10rpx;
+  font-size: small;
+}
+textarea,
+input {
+  margin-left: 10rpx;
+  border-left-style: groove;
+  color:#000;
+  font-size: small;
+  padding-left: 30rpx;
+  width: 500rpx;
+  background-color: lightgray;
+}
+.label {
+  width: 200rpx;
+}
+.add-review {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}

@@ -6,12 +6,35 @@
     "pages/review/review",
     "pages/order/order"
   ],
-  
+  "tabBar": {
+    "color": "#ffffff",
+    "backgroundColor": "#04395E",
+    "selectedColor": "#ffffff",
+
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "Home",
+      "iconPath": "Images/Home_White.png",
+      "selectedIconPath": "Images/Home_White.png"
+    },
+    {
+      "pagePath": "pages/order/order",
+      "text": "Order",
+      "iconPath": "Images/Order_White.png",
+      "selectedIconPath": "Images/Order_White.png"
+    },
+    {
+      "pagePath": "pages/profile/profile",
+      "text": "My Account",
+      "iconPath": "Images/Profile_White.png",
+      "selectedIconPath": "Images/Profile_White.png"
+    }]
+  },
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#04395E",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
